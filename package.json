@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "sync": "node src/sync.js",
     "tasks:test": "node src/integrations/googletasksIntegrations.js",
     "notion:test": "node src/integrations/notionIntegration.js",
     "test": "echo \"Error: no test specified\" && exit 1"

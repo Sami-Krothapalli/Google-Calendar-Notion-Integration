@@ -1,11 +1,15 @@
-const { notion } = require("../config/Notion");
+const { notion } = require("../config/notion");
 
-const solveDateFields = [
-  "Date Solved",
+const reviewDateFields = [
   "Solve Date 1",
   "Solve Date 2",
   "Solve Date 3",
   "Solve Date 4",
+];
+
+const notionDateFields = [
+  "Date Solved",
+  ...reviewDateFields,
 ];
 
 function getTitle(property) {
@@ -55,7 +59,7 @@ async function getLeetcodeProblems() {
     const problemTitle = getTitle(row.properties["Problem Title"]);
     const dates = {};
 
-    for (const field of solveDateFields) {
+    for (const field of notionDateFields) {
       dates[field] = getDate(row.properties[field]);
     }
 
@@ -86,4 +90,5 @@ if (require.main === module) {
 
 module.exports = {
   getLeetcodeProblems,
+  solveDateFields: reviewDateFields,
 };
