@@ -1,1 +1,1 @@
-const { googlecalandar } = requires("../config/googlecalandar.js");
+const { googlecalandar } = require("../config/googlecalandar.js");
